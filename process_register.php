@@ -18,14 +18,17 @@ $stmt = $conn->prepare("INSERT INTO usuário (nome, email, senha) VALUES (?,?,?)
 
 //substitui os parâmetros da query pelos valores reais de forma segura
 //"sss" significa que estamos passando 3 strings ( s = string)
-$stmt ->bind_param ("sss" , $nome, $email, $senha);
+$stmt ->bind_param ("sss", $nome, $email, $senha);
 
 // Executa a query SQL no banco de dados
 if ($stmt->execute()) {
 // Se  o cadastro for feito com sucesso, redireciona para a tela de login
 // Envia o parâmetro "sucesso=1" na URL para mostrar mensagem no login
 header("Location: login.php?sucesso=1");
-exit; // Finaliza o script imediatamente após
+exit; // Finaliza o script imediatamente após o redirecionamento
+} else {
+ // Caso ocorra algum erro (ex: email duplicado), exibe o erro na tela
+ echo "erro ao cadastrar: " . $conn->error;
 }
 
 ?>
