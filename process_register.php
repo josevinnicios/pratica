@@ -3,7 +3,7 @@
 require 'config/db.php';
 
 // Verifica se o formulário foi enviado utilizando o método POST
-if ($_SERVER ["REQUEST_METHOD"] == "PODST") {
+if ($_SERVER ["REQUEST_METHOD"] == "PODST") 
 
 //pega os dados do formulário enviados pelo método POST
 $nome = $_POST [ 'nome'];     //Nome digitado pelo usuário 
