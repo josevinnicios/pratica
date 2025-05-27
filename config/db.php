@@ -4,7 +4,7 @@
 $host = 'localhost';  //Servidor (normalmente localhost)
 $user = 'root';      //Usuario do MySQL
 $pass = '';          // Senha ( em localhost, normalmente vazia)
-$db = 'login_tutorial'; // Nome do banco de dados
+$db = 'empresa'; // Nome do banco de dados
 
 $conn = new mysqli($host, $user, $pass, $db); //Cria conexão
 
